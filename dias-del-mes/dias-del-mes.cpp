@@ -1,7 +1,7 @@
 /*
  * Autores: Javier Martínez y Miguel Ángel Latre
  * Última revisión: 16-10-2019
- * Resumen: Programa interactivo que programa pregunta repetidamente por un mes y
+ * Resumen: Programa interactivo que pregunta repetidamente por un mes y
  *          un año y escribe en la pantalla el número de días que tiene el mes. 
  *          Clase de problemas de Programación 1 del tema 5 (funciones).
  */
@@ -16,8 +16,11 @@ const int AGNO_INICIO_GREGORIANO = 1582;
 
 /*
  * Pre:  agno > 1582
- * Post: Ha devuelto true si y solo si el año «agno» es bisiesto de acuerdo con las reglas del calendario gregoriano.
- * Nota: Código de la clase de problemas sobre composición condicional.
+ * Post: Ha devuelto true si y solo si el año «agno» es bisiesto de acuerdo con
+ *       las reglas del calendario gregoriano.
+ * Nota: Código de la clase de problemas sobre composición condicional. En el
+ *       tema 7 (diseño modular), ser verá cómo reutilizar código sin necesidad de
+ *       copiarlo.
  */
 bool esBisiesto(int agno) {
     bool multiplo4   = (agno %   4 == 0);
