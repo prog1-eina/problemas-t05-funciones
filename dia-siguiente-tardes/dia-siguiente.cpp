@@ -3,7 +3,7 @@
  * Última revisión: 16-10-2019
  * Resumen: Programa interactivo que programa pide al usuario el día, mes y año de
  *          una fecha y escribe en la pantalla la fecha siguiente.
- *          Versión para el grupo 411 (mañanas).
+ *          Versión para el grupo 412 (tardes).
  */
 #include <iostream>
 #include <iomanip>
@@ -67,18 +67,19 @@ int diasDelMes(int mes, int agno) {
  * Pre:  1 ≤ dia ≤ 31, 1 ≤ mes ≤ 12, agno > 1582 y la fecha formada por
  *       «dia», «mes» y «agno» representan una fecha válida del calendario
  *       gregoriano.
- * Post: Ha devuelto la fecha correspondiente al día posterior a la fecha
- *       representada por el valor de los parámetros «dia», «mes» y «agno»
- *       codificada con el mismo formato «aaaammdd» utilizado en la práctica 2ª,
- *       donde los dígitos «aaaa» representan el año, los dígitos «mm», el mes y los
- *       dígitos «dd» el día.
- *
- *       Por ejemplo: 
- *          diaSiguiente(17, 10, 2019) devuelve 20191018
- *          diaSiguiente(29, 2, 2020) devuelve 20200301
- *          diaSiguiente(31, 12, 2022) devuelve 20230101
+ * Post: Tras la ejecución de la función, los parámetros «fecha», «dia», «mes» y
+ *       «agno» representan la fecha correspondiente al día siguiente al que
+ *       representaban al iniciarse la ejecución de la función.
+ * 
+ *       Por ejemplo, si d, m y a son variables de tipo entero y d = 17, m = 10 y
+ *       a = 2019, tras la invocación diaSiguiente(d, m, a) los valores de las
+ *       variables serían d = 18, m = 10 y a = 2019.
+ *       Si los valores fueran d = 29, m = 2 y a = 2020, tras la invocación
+ *       diaSiguiente(d, m, a) los valores serían d = 1, m = 3 y a = 2020.
+ *       Si los valores fueran d = 31, m = 12 y a = 2022, tras la invocación
+ *       diaSiguiente(d, m, a) los valores serían d = 1, m = 1 y a = 2023.
  */
-int diaSiguiente(int dia, int mes, int agno) {
+void diaSiguiente(int& dia, int& mes, int& agno) {
     dia++;
     if (dia > diasDelMes(mes, agno)) {
         dia = 1;
@@ -88,7 +89,6 @@ int diaSiguiente(int dia, int mes, int agno) {
             agno++;
         }
     }
-    return agno * 10000 + mes * 100 + dia;
 }
 
 
@@ -120,16 +120,12 @@ int main() {
     }
     else {
         // Día, mes y año correctos
-        int fecha = diaSiguiente(dia, mes, agno);
-        
-        int diaSiguiente = fecha % 100;
-        int mesDiaSiguiente = fecha / 100 % 100;
-        int agnoDiaSiguiente = fecha / 10000;
+        diaSiguiente(dia, mes, agno);
         
         cout << "El día siguiente es " << setfill('0')
-             << setw(2) << diaSiguiente << "/"
-             << setw(2) << mesDiaSiguiente << "/"
-             << agnoDiaSiguiente << endl;
+             << setw(2) << dia << "/"
+             << setw(2) << mes << "/"
+             << agno << endl;
              
         return 0;
     }
