@@ -93,7 +93,7 @@ void diaSiguiente(int& dia, int& mes, int& agno) {
 
 
 /*
- * Programa que pide al usuario el día, mes y año de una fecha y escribe en
+ * Programa que pide al usuario el día, mes y año de una fecha y escribe en la
  * pantalla la fecha correspondiente al día siguiente.
  */
 int main() {    
