@@ -23,7 +23,7 @@ const int AGNO_INICIO_GREGORIANO = 1582;
  *       tema 7 (diseño modular), ser verá cómo reutilizar código sin necesidad de
  *       copiarlo.
  */
-bool esBisiesto(int agno) {
+bool esBisiesto(unsigned int agno) {
     bool multiplo4   = (agno %   4 == 0);
     bool multiplo100 = (agno % 100 == 0);
     bool multiplo400 = (agno % 400 == 0);
@@ -42,7 +42,7 @@ bool esBisiesto(int agno) {
  * Nota: Código del primer problema. En el tema 7 (diseño modular), ser verá cómo
  *       reutilizar código sin necesidad de copiarlo.
  */
-int diasDelMes(int mes, int agno) {
+unsigned int diasDelMes(unsigned int mes, unsigned int agno) {
     if (mes == 2) {
         // Febrero: el número de día depende del año
         if (esBisiesto(agno)) {
@@ -79,7 +79,7 @@ int diasDelMes(int mes, int agno) {
  *       Si los valores fueran d = 31, m = 12 y a = 2022, tras la invocación
  *       diaSiguiente(d, m, a) los valores serían d = 1, m = 1 y a = 2023.
  */
-void diaSiguiente(int& dia, int& mes, int& agno) {
+void diaSiguiente(unsigned int& dia, unsigned int& mes, unsigned int& agno) {
     dia++;
     if (dia > diasDelMes(mes, agno)) {
         dia = 1;
@@ -98,7 +98,7 @@ void diaSiguiente(int& dia, int& mes, int& agno) {
  */
 int main() {    
     cout << "Escriba el día, mes y año de una fecha: ";
-    int dia, mes, agno;
+    unsigned int dia, mes, agno;
     cin >> dia >> mes >> agno;
     
     if (mes < 1 || mes > 12) {

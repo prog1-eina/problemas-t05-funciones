@@ -1,6 +1,6 @@
 /*
  * Autores: Javier Martínez y Miguel Ángel Latre
- * Última revisión: 16-10-2019
+ * Última revisión: 19-10-2020
  * Resumen: Programa interactivo que pregunta repetidamente por un mes y
  *          un año y escribe en la pantalla el número de días que tiene el mes. 
  *          Clase de problemas de Programación 1 del tema 5 (funciones).
@@ -22,7 +22,7 @@ const int AGNO_INICIO_GREGORIANO = 1582;
  *       tema 7 (diseño modular), ser verá cómo reutilizar código sin necesidad de
  *       copiarlo.
  */
-bool esBisiesto(int agno) {
+bool esBisiesto(unsigned int agno) {
     bool multiplo4   = (agno %   4 == 0);
     bool multiplo100 = (agno % 100 == 0);
     bool multiplo400 = (agno % 400 == 0);
@@ -38,9 +38,9 @@ bool esBisiesto(int agno) {
  *                    diasDelMes(2, 2018) devuelve 28 y
  *                    diasDelMes(2, 2020) devuelve 29.
  */
-int diasDelMes(int mes, int agno) {
+unsigned int diasDelMes(unsigned int mes, unsigned int agno) {
     if (mes == 2) {
-        // Febrero: el número de día depende del año
+        // Febrero: el número de días depende del año
         if (esBisiesto(agno)) {
             return 29;
         }
