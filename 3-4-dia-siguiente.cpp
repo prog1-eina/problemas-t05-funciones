@@ -1,9 +1,8 @@
 /*
  * Autores: Javier Martínez y Miguel Ángel Latre
- * Última revisión: 16-10-2019
+ * Última revisión: 19-10-2020
  * Resumen: Programa interactivo que programa pide al usuario el día, mes y año de
  *          una fecha y escribe en la pantalla la fecha siguiente.
- *          Versión para el grupo 412 (tardes).
  */
 #include <iostream>
 #include <iomanip>
